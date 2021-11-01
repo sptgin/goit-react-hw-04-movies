@@ -14,7 +14,6 @@ export default function HomePage() {
   }, []);
 
   console.log(movies);
-  console.log(url);
 
   return (
     <div>
@@ -23,7 +22,15 @@ export default function HomePage() {
         <ul>
           {movies.results.map(movie => (
             <li key={movie.id}>
-              <Link to={`${url}/movie/${movie.id}`}>{movie.title}</Link>
+              <Link to={`/movie/${movie.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                  alt={movie.title}
+                />
+                <p>{movie.title}</p>
+                <p>{movie.release_date}</p>
+                <p>{movie.overview}</p>
+              </Link>
             </li>
           ))}
         </ul>

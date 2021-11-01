@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
-import Cast from './views/Cast';
+
 import Container from './components/Container';
 import MainMenu from './components/MainMenu';
 import HomePage from './views/HomePage';
@@ -22,12 +22,12 @@ export default function App() {
         <Route path="/movie/:movieId">
           <MovieDetailsPage />
         </Route>
-        <Route path="/movie/:movieId/reviews">
+        {/* <Route path="/movie/:movieId/reviews">
           <Reviews />
         </Route>
         <Route path="/movie/:movieId/cast">
           <Cast />
-        </Route>
+        </Route> */}
         <Route>
           <NotFoundPage />
         </Route>
