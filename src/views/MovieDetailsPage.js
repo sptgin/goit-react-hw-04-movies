@@ -33,9 +33,8 @@ export default function MovieDetailsPage() {
   return (
     <div>
       <button type="button" onClick={onBackButtonClick}>
-        {location?.state?.from?.label ?? 'Go Back'}{' '}
+        {location?.state?.from?.label ?? 'Go Back'}
       </button>
-
       <h2>Movie Details Page - детальная информация о фильме ...</h2>
       {movie && <MovieDetails movie={movie} />}
 
