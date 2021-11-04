@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import MoviesSearch from '../components/MoviesSearch';
+import MoviesList from '../components/MoviesList';
 import MoviesAPI from '../services/move-api';
 const moviesearch = new MoviesAPI();
 
@@ -25,8 +26,9 @@ export default function MoviesPage() {
     <div>
       <MoviesSearch onSubmit={onSubmit} />
       <h2>Movies Page - страница поиска фильма ...</h2>
+      <MoviesList movies={movies} />
 
-      {movies && (
+      {/* {movies && (
         <ul>
           {movies.results.map(movie => (
             <li key={movie.id}>
@@ -37,11 +39,12 @@ export default function MoviesPage() {
                 />
                 <p>{movie.title}</p>
                 <p>{movie.release_date}</p>
+                <p>{movie.overview}</p>
               </Link>
             </li>
           ))}
         </ul>
-      )}
+      )} */}
     </div>
   );
 }
