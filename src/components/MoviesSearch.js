@@ -15,6 +15,7 @@ export default function MoviesSearch({ onSubmit }) {
       return;
     }
     onSubmit(searchFormInput);
+    console.log(searchFormInput);
     setSearchFornInput('');
   };
 

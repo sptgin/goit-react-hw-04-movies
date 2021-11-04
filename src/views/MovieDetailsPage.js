@@ -27,6 +27,7 @@ export default function MovieDetailsPage() {
   }, []);
 
   const onBackButtonClick = () => {
+    console.log(history);
     history.push(location?.state?.from?.location ?? '/');
   };
 

@@ -41,10 +41,19 @@ export default class API {
     return (this._page = 1);
   }
 
+  async searchMovies() {
+    let url = `${this.api_url}search/movie?api_key=${this.api_key}&language=en-US&query=${this.searchQuery}`;
+    try {
+      const result = await axios.get(url);
+      const data = result.data;
+      return data;
+    } catch (error) {
+      return error.message;
+    }
+  }
+
   async search() {
-    let url = `${this.api_url}${this.searchQuery}?api_key=${this.api_key}
-`;
-    console.log(url);
+    let url = `${this.api_url}${this.searchQuery}?api_key=${this.api_key}`;
     try {
       const result = await axios.get(url);
       const data = result.data;
