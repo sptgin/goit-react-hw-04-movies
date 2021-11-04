@@ -9,7 +9,7 @@ export default function HomePage() {
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
-    moviesearch.searchQuery = 'trending/movie/day';
+    moviesearch.searchQuery = 'trending/movie/week';
     moviesearch.search().then(setMovies);
   }, []);
 
