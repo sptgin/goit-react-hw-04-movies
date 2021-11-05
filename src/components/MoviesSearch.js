@@ -11,11 +11,9 @@ export default function MoviesSearch({ onSubmit }) {
   const handleSubmit = event => {
     event.preventDefault();
     if (searchFormInput.trim() === '') {
-      alert('Enter movie name ...');
-      return;
+      alert('Enter movie name for search.');
     }
     onSubmit(searchFormInput);
-    console.log(searchFormInput);
     setSearchFornInput('');
   };
 

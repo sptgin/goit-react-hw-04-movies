@@ -1,50 +1,57 @@
 import { useState, useEffect } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
+import { Notification } from 'react-pnotify';
 import MoviesSearch from '../components/MoviesSearch';
 import MoviesList from '../components/MoviesList';
 import MoviesAPI from '../services/move-api';
+import SpinnerLoader from '../components/Loader';
+
 const moviesearch = new MoviesAPI();
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
   const [moviesForSearch, setMoviesForSearch] = useState('');
+  const [status, setStatus] = useState('init');
+  const [errorMessage, setErrorMessage] = useState('');
   const onSubmit = searchValue => {
     setMoviesForSearch(searchValue);
   };
 
   useEffect(() => {
-    console.log(moviesForSearch);
-    moviesearch.searchQuery = `${moviesForSearch}`;
-    {
-      moviesForSearch && moviesearch.searchMovies().then(setMovies);
+    if (moviesForSearch === '') {
+      return;
     }
+    setStatus('pending');
+    moviesearch.searchQuery = `${moviesForSearch}`;
+    moviesearch.searchMovies().then(movies => {
+      if (movies.results.length > 0) {
+        setMovies(movies);
+        setStatus('success');
+      } else {
+        setStatus('error');
+        setErrorMessage('No movies found ...');
+      }
+    });
   }, [moviesForSearch]);
 
-  console.log(movies);
+  if (status === 'init') {
+    return <MoviesSearch onSubmit={onSubmit} />;
+  }
 
-  return (
-    <div>
-      <MoviesSearch onSubmit={onSubmit} />
-      <h2>Movies Page - страница поиска фильма ...</h2>
-      <MoviesList movies={movies} />
+  if (status === 'pending') {
+    return <SpinnerLoader />;
+  }
 
-      {/* {movies && (
-        <ul>
-          {movies.results.map(movie => (
-            <li key={movie.id}>
-              <Link to={`/movie/${movie.id}`}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                  alt={movie.title}
-                />
-                <p>{movie.title}</p>
-                <p>{movie.release_date}</p>
-                <p>{movie.overview}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )} */}
-    </div>
-  );
+  if (status === 'success') {
+    return (
+      <div>
+        <MoviesSearch onSubmit={onSubmit} />
+        <MoviesList movies={movies} />
+      </div>
+    );
+  }
+  if (status === 'error') {
+    <Notification type="Error" title="Error" text={errorMessage} />;
+    return <MoviesSearch onSubmit={onSubmit} />;
+  }
 }
