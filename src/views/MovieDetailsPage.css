@@ -1,3 +1,7 @@
+.movieDetail {
+  margin-bottom: 60px;
+}
+
 .movieDetail-card {
   display: block;
   min-width: 320px;
