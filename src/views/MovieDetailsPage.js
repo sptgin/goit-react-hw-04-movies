@@ -7,6 +7,7 @@ import {
   Route,
 } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import './MovieDetailsPage.css';
 import Cast from './Cast';
 import Reviews from './Reviews';
 import MovieDetails from '../components/MovieDetails';
@@ -32,20 +33,40 @@ export default function MovieDetailsPage() {
   };
 
   return (
-    <div>
-      <button type="button" onClick={onBackButtonClick}>
-        {location?.state?.from?.label ?? 'Go Back'}
-      </button>
-      <h2>Movie Details Page - детальная информация о фильме ...</h2>
-      {movie && <MovieDetails movie={movie} />}
-
-      <NavLink exact to={`${url}/cast`}>
-        Cast
-      </NavLink>
-      <NavLink exact to={`${url}/reviews`}>
-        Reviews
-      </NavLink>
-
+    <div className="movieDetail">
+      <div className="movieDetail-card">
+        <button
+          className="movieDetailGoBackButton"
+          type="button"
+          onClick={onBackButtonClick}
+        >
+          {location?.state?.from?.label ?? 'Go Back'}
+        </button>
+        <h2>Movie Details Page</h2>
+        {movie && <MovieDetails movie={movie} />}
+        <ul className="movieDetailNavigation-list">
+          <li className="movieDetailNavigation-item">
+            <NavLink
+              exact
+              to={`${url}/cast`}
+              className="movieDetailNavigationlink"
+              activeClassName="movieDetailNavigationActiveLink"
+            >
+              Cast
+            </NavLink>
+          </li>
+          <li className="movieDetailNavigation-item">
+            <NavLink
+              exact
+              to={`${url}/reviews`}
+              className="movieDetailNavigationlink"
+              activeClassName="movieDetailNavigationActiveLink"
+            >
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+      </div>
       <Route path={`${path}/cast`}>
         <Cast />
       </Route>

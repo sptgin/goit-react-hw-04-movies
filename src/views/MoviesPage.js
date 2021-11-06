@@ -51,7 +51,11 @@ export default function MoviesPage() {
     );
   }
   if (status === 'error') {
-    <Notification type="Error" title="Error" text={errorMessage} />;
-    return <MoviesSearch onSubmit={onSubmit} />;
+    return (
+      <div>
+        <MoviesSearch onSubmit={onSubmit} />
+        <Notification type="error" title="Error" text={errorMessage} />
+      </div>
+    );
   }
 }

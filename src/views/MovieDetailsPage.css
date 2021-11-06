@@ -1,0 +1,43 @@
+.movieDetail-card {
+  display: block;
+  min-width: 320px;
+  padding: 10px;
+  margin-top: 65px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: silver;
+}
+
+.movieDetailGoBackButton {
+  background-color: darkgrey;
+}
+
+.movieDetailNavigation-list {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  list-style: none;
+  display: flex;
+}
+.movieDetailNavigation-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 5px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.movieDetailNavigationlink {
+  text-decoration: none;
+  color: grey;
+}
+
+.movieDetailNavigationActiveLink {
+  text-decoration: none;
+  color: darkgrey;
+}
+
+.movieDetailNavigationlink:hover {
+  color: white;
+}

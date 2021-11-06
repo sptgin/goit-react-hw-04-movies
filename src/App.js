@@ -2,6 +2,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Container from './components/Container';
 import MainMenu from './components/MainMenu';
+import Footer from './components/Footer';
 import HomePage from './views/HomePage';
 import MovieDetailsPage from './views/MovieDetailsPage';
 import MoviesPage from './views/MoviesPage';
@@ -29,6 +30,7 @@ export default function App() {
           <NotFoundPage />
         </Route>
       </Switch>
+      <Footer />
     </Container>
   );
 }

@@ -1,4 +1,5 @@
 import Loader from 'react-loader-spinner';
+import styles from './Loader.css';
 
 function SpinnerLoader() {
   return (

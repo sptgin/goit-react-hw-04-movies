@@ -15,8 +15,6 @@ export default function Reviews() {
     moviesearch.search().then(setReviews);
   }, []);
 
-  console.log(reviews);
-
   return (
     <div>
       <h2>Reviws</h2>

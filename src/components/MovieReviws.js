@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
+import './MovieReviws.css';
+
 export default function MovieReviws({ reviews }) {
   return (
-    <div>
-      <ul>
+    <div className="movieReviws">
+      <ul className="movieReviws-list">
         {reviews.results.map(review => (
-          <li key={review.id}>
-            {review.created_at}
-            {review.author}
-            {review.content}
+          <li className="movieReviws-list_item" key={review.id}>
+            <p className="movieReviws-name">
+              {review.author}
+              {review.created_at}
+            </p>
+            <p className="movieReviws-content">{review.content}</p>
           </li>
         ))}
       </ul>

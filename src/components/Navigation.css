@@ -1,0 +1,32 @@
+.navigationlink {
+  text-decoration: none;
+  color: gray;
+}
+.navigationlink:hover {
+  color: darkgrey;
+}
+.navigationActiveLink {
+  text-decoration: none;
+  color: white;
+}
+
+.navigationList {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgb(3, 37, 65);
+  list-style: none;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navigationListItem {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 5px;
+  font-size: x-large;
+  font-weight: bolder;
+}
