@@ -1,13 +1,18 @@
 import PropTypes from 'prop-types';
 import './MovieDetails.css';
+import noPosterImage from '../images/poster.jpg';
+
 export default function MovieDetails({ movie }) {
   return (
     <div className="movieDetailsCard-container">
       <div className="movieDetailsCard-poster">
         <img
           className="movieDetailsCard-image"
-          src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-          alt={movie.title}
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
+              : noPosterImage
+          }
         />
         <div className="movieDetailsCard-info">
           <p className="movieDetailsCard-title">{movie.title}</p>
