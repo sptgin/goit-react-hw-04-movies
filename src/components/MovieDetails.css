@@ -1,0 +1,42 @@
+.movieDetailsCard-container {
+}
+.movieDetailsCard-image {
+  display: block;
+  min-width: 320px;
+}
+.movieDetailsCard-poster {
+  display: flex;
+}
+.movieDetailsCard-info {
+  padding-left: 15px;
+}
+.movieDetailsCard-title {
+  font-size: larger;
+  font-weight: bolder;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.movieDetailsCard-data {
+  font-size: larg;
+  font-weight: bolder;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.movieDetailsCard-rating {
+  font-size: larg;
+  font-weight: bolder;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.movieDetailsCard-genre_list {
+  list-style: none;
+  padding-left: 10px;
+}
+.movieDetailsCard-genre_item {
+  font-size: medium;
+  font-weight: normal;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.movieDetailsCard-overview {
+}

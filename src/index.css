@@ -30,4 +30,6 @@ img {
 h2 {
   display: block;
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

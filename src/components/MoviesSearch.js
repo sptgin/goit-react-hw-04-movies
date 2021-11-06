@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Notification } from 'react-pnotify';
+import './MoviesSearch.css';
 
 export default function MoviesSearch({ onSubmit }) {
   const [searchFormInput, setSearchFornInput] = useState('');
@@ -19,8 +20,9 @@ export default function MoviesSearch({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="moviesSearch-form" onSubmit={handleSubmit}>
       <input
+        className="moviesSearch-input"
         value={searchFormInput}
         type="search"
         autoComplete="off"
@@ -28,7 +30,7 @@ export default function MoviesSearch({ onSubmit }) {
         placeholder="Search movies"
         onChange={handlerChange}
       />
-      <button type="submit">
+      <button className="moviesSearch-button" type="submit">
         <span>Search</span>
       </button>
     </form>

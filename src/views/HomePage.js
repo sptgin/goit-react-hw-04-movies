@@ -4,6 +4,7 @@ import { Notification } from 'react-pnotify';
 import MoviesList from '../components/MoviesList';
 import MoviesAPI from '../services/move-api';
 import SpinnerLoader from '../components/Loader';
+import './HomePage.css';
 
 const moviesearch = new MoviesAPI();
 
@@ -37,8 +38,8 @@ export default function HomePage() {
 
   if (status === 'success') {
     return (
-      <div>
-        <h2>Trending today</h2>
+      <div className="homePage-container">
+        <h2 className="homePage-title">Trending today</h2>
         <MoviesList movies={movies} />
       </div>
     );

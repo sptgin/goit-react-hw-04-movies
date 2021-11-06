@@ -42,7 +42,7 @@ export default function MovieDetailsPage() {
         >
           {location?.state?.from?.label ?? 'Go Back'}
         </button>
-        <h2>Movie Details Page</h2>
+        <h2>Movie Details</h2>
         {movie && <MovieDetails movie={movie} />}
         <ul className="movieDetailNavigation-list">
           <li className="movieDetailNavigation-item">
