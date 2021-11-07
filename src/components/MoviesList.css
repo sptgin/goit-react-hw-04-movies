@@ -28,6 +28,9 @@
   margin-right: 0px;
   background-color: silver;
 }
+.moviesList-item:hover {
+  transform: scale(1.01);
+}
 .moviesList-image {
   display: block;
   max-width: 200px;

@@ -3,10 +3,12 @@
   justify-content: flex-end;
   align-items: center;
   margin-top: 15px;
-  margin-right: 15px;
+  margin-right: 10px;
   margin-left: 200px;
-  position: fixed;
+  position: relative;
+  z-index: 55;
 }
+
 .moviesSearch-input {
   display: block;
   color: black;

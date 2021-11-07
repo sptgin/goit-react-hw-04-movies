@@ -5,6 +5,7 @@ import MoviesSearch from '../components/MoviesSearch';
 import MoviesList from '../components/MoviesList';
 import MoviesAPI from '../services/move-api';
 import SpinnerLoader from '../components/Loader';
+import './MoviesPage.css';
 
 const moviesearch = new MoviesAPI();
 
@@ -45,8 +46,13 @@ export default function MoviesPage() {
   if (status === 'success') {
     return (
       <div>
-        <MoviesSearch onSubmit={onSubmit} />
-        <MoviesList movies={movies} />
+        <div className="moviesPage-search">
+          <MoviesSearch onSubmit={onSubmit} />
+        </div>
+
+        <div className="moviesPage-container">
+          <MoviesList movies={movies} />
+        </div>
       </div>
     );
   }
