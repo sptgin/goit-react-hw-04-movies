@@ -5,11 +5,6 @@ import MainMenu from './components/MainMenu';
 import Footer from './components/Footer';
 import Loader from 'react-loader-spinner';
 
-//import HomePage from './views/HomePage';
-//import MovieDetailsPage from './views/MovieDetailsPage';
-//import MoviesPage from './views/MoviesPage';
-//import NotFoundPage from './views/NotFoundPage';
-
 const HomePage = lazy(() => import('./views/HomePage'));
 const MoviesPage = lazy(() => import('./views/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('./views/MovieDetailsPage'));

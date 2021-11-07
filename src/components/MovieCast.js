@@ -16,6 +16,7 @@ export default function MovieCast({ cast }) {
                     ? `https://image.tmdb.org/t/p/w200/${person.profile_path}`
                     : noPersonImage
                 }
+                alt={person.name}
               />
               <p className="movieCast-name">{person.name}</p>
               <p className="movieCast-character">as {person.character}</p>

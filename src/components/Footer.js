@@ -1,6 +1,4 @@
-import Navigation from './Navigation';
-import styles from './Footer.css';
-
+import './Footer.css';
 export default function Footer() {
   return (
     <footer className="footer">

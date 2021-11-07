@@ -17,6 +17,7 @@ export default function MoviesList({ movies }) {
                       ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
                       : noPosterImage
                   }
+                  alt={movie.title}
                 />
                 <p className="moviesList-title">{movie.title}</p>
                 <p className="moviesList-date">{movie.release_date}</p>

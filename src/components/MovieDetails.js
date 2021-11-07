@@ -13,6 +13,7 @@ export default function MovieDetails({ movie }) {
               ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
               : noPosterImage
           }
+          alt={movie.title}
         />
         <div className="movieDetailsCard-info">
           <p className="movieDetailsCard-title">{movie.title}</p>

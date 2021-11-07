@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
 import { Notification } from 'react-pnotify';
 import MoviesSearch from '../components/MoviesSearch';
 import MoviesList from '../components/MoviesList';
@@ -60,7 +59,7 @@ export default function MoviesPage() {
     return (
       <div>
         <MoviesSearch onSubmit={onSubmit} />
-        <Notification type="error" title="Error" text={errorMessage} />
+        <Notification type="info" title="Error" text={errorMessage} />
       </div>
     );
   }

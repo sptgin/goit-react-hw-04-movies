@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { Notification } from 'react-pnotify';
 import './MoviesSearch.css';
 
 export default function MoviesSearch({ onSubmit }) {

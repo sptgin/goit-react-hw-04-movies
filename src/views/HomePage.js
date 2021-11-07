@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useRouteMatch } from 'react-router-dom';
 import { Notification } from 'react-pnotify';
 import MoviesList from '../components/MoviesList';
 import MoviesAPI from '../services/move-api';
@@ -9,7 +8,6 @@ import './HomePage.css';
 const moviesearch = new MoviesAPI();
 
 export default function HomePage() {
-  const { url, path } = useRouteMatch();
   const [status, setStatus] = useState('init');
   const [errorMessage, setErrorMessage] = useState('');
   const [movies, setMovies] = useState(null);
@@ -45,6 +43,6 @@ export default function HomePage() {
     );
   }
   if (status === 'error') {
-    return <Notification type="Error" title="Error" text={errorMessage} />;
+    return <Notification type="info" title="Error" text={errorMessage} />;
   }
 }

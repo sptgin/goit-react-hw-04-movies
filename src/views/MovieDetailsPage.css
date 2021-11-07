@@ -13,7 +13,12 @@
 }
 
 .movieDetailGoBackButton {
-  background-color: darkgrey;
+  width: 100px;
+  height: 30px;
+  color: white;
+  font-size: larger;
+  border-radius: 5px;
+  background-color: grey;
 }
 
 .movieDetailNavigation-list {

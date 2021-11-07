@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import MovieReviws from '../components/MovieReviws';
 import MoviesAPI from '../services/move-api';
-import SpinnerLoader from '../components/Loader';
 
 const moviesearch = new MoviesAPI();
 
